@@ -13,3 +13,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.App {
+  margin: 0 auto;
+  max-width: 90%;
+  padding: 20px;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  color: darkblue;
+  transform: scale(1.05);
+}
+
+a:visited {
+  color: darkorchid;
+}
+
+a:active {
+  color: palevioletred;
+}
