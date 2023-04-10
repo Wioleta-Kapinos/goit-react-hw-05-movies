@@ -1,5 +1,8 @@
+.homeBox {
+    padding: 20px;
+}
+
 h2 {
-    text-align: center;
     font-weight: 700;
     font-size: 20px;
 }
@@ -13,16 +16,13 @@ h2 {
 .movies {
     list-style-type: name;
     display: flex;
-    flex-direction: column;  
+    flex-direction: column; 
+    padding-left: 20px; 
 }
 
 .moviesItem {
     height: 20px;
     padding-bottom: 10px;
-}
-
-.moviesItem:hover {
-    transform: scale(1.05);
 }
 
 .error {

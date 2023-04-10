@@ -1,6 +1,6 @@
 import { Loader } from "components/Loader/Loader";
 import { useEffect, useState } from "react";
-import { Link, useParams, Outlet, useNavigate } from "react-router-dom";
+import { Link, useParams, Outlet, useLocation } from "react-router-dom";
 import { getInfoAboutMovie } from "utils/API";
 import css from "./MovieDetails.module.css";
 
@@ -15,7 +15,8 @@ const MovieDetails = () => {
     const [score, setScore] = useState(0);
     const [overview, setOverview] =useState("");
     const [genres, setGenres] = useState([]);
-    const navigate = useNavigate();
+    const location = useLocation();
+    const backLink = location.state?.from ?? "/";
 
     const getMoreInformation = async (id) => {
         setIsLoading(true);
@@ -45,7 +46,9 @@ const MovieDetails = () => {
 
     return (
         <div className={css.detailsBox}>
-            <button type="button" className={css.btn} onClick={() => {navigate (-1)}}>&#10229; Go back</button>
+            <Link to={backLink}>
+            <button type="button" className={css.btn}>&#10229; Go back</button>
+            </Link>
             <section className={css.detailsSection}>
             {error && <p className={css.error}>Something went wrong, please try later.</p>}
             {isLoading && <Loader />}

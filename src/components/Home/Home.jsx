@@ -26,7 +26,7 @@ const Home = () => {
     }, []);
     
     return (
-        <div>
+        <div className={css.homeBox}>
             <h2>&#11088; Trending movies today &#11088;</h2>
             <ul className={css.movies}>
                 {error && <p className={css.error}>Something went wrong, please try later.</p>}
