@@ -1,0 +1,35 @@
+.form {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    height: 35px;
+}
+
+.inputForm {
+    border-radius: 5px;
+    border: 2px solid rgb(100, 93, 93);
+    background-color: whitesmoke;
+    box-shadow: 8px 6px 6px -3px gray;
+    padding-left: 5px;
+}
+
+.searchButton {
+    border-radius: 5px;
+    border: 2px solid rgb(100, 93, 93);
+    margin-left: 10px;
+    background-color: rgb(183, 231, 240);
+    box-shadow: 8px 6px 6px -3px gray;
+}
+
+.searchButton:hover {
+    background-color: rgb(153, 227, 240);
+}
+
+@counter-style name {
+    system: cyclic;
+    symbols: 🎥;
+}
+
+.moviesList {
+    list-style-type: name;
+}

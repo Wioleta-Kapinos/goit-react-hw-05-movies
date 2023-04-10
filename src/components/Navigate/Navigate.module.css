@@ -3,4 +3,9 @@
     justify-content: space-evenly;
     font-size: 20px;
     text-align: center;
+    padding-bottom: 20px;
+}
+
+.wrapNav {
+    border-bottom: 2px solid rgb(42, 33, 33);
 }

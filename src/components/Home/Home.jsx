@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Loader } from "components/Loader/Loader";
 import { getTrendingMovies } from "utils/API";
-
+import css from "./Home.module.css";
 
 const Home = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -27,12 +27,12 @@ const Home = () => {
     
     return (
         <div>
-            <h2>Trending movies today</h2>
-            <ul>
+            <h2>&#11088; Trending movies today &#11088;</h2>
+            <ul className={css.movies}>
                 {error && <p className="error">Something went wrong, please try later.</p>}
                 {isLoading && <Loader /> }
                 {titles && titles.map(({ id, title}) => (
-                    <li key={id}>
+                    <li key={id} className={css.moviesItem}>
                         <Link to={`/movies/${id}`}>
                             <p>{title}</p>
                         </Link>

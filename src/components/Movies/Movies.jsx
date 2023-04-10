@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { searchMovie } from "utils/API";
 import { useSearchParams, Link } from "react-router-dom";
 import { Loader } from "components/Loader/Loader";
+import css from "./Movies.module.css";
 
 const Movies = () => {
     const [value, setValue] = useState("");
@@ -48,14 +49,18 @@ const Movies = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <div>
+        <form className={css.form} onSubmit={handleSubmit}>
             <input 
+            className={css.inputForm}
             onChange={handleChange}
             type="text"
             placeholder="Enter the movie name"
             />
-            <button type="submit">Search</button>
-            <ul>
+            <button type="submit" className={css.searchButton}>Search</button>
+         </form>
+         <div>
+            <ul className={css.moviesList}>
             {error && <p className="error">Something went wrong, please try later.</p>}
                 {isLoading && <Loader />}
                 {movies.map(movie => (
@@ -66,7 +71,8 @@ const Movies = () => {
                     </li>
                 ))}
             </ul>
-        </form>
+        </div>
+    </div>
     )
 }
 

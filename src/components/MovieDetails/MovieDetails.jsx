@@ -2,6 +2,7 @@ import { Loader } from "components/Loader/Loader";
 import { useEffect, useState } from "react";
 import { Link, useParams, Outlet, useNavigate } from "react-router-dom";
 import { getInfoAboutMovie } from "utils/API";
+import css from "./MovieDetails.module.css";
 
 const MovieDetails = () => {
    
@@ -43,43 +44,45 @@ const MovieDetails = () => {
     }, [movieId]);
 
     return (
-        <div>
-            <button type="button" onClick={() => {navigate (-1)}}> &#10229; Go back</button>
-            <section>
+        <div className={css.detailsBox}>
+            <button type="button" className={css.btn} onClick={() => {navigate (-1)}}>&#10229; Go back</button>
+            <section className={css.detailsSection}>
             {error && <p className="error">Something went wrong, please try later.</p>}
             {isLoading && <Loader />}
                 <img 
+                className={css.movieImage}
                 src={image}
                 alt={title}
                 />
-                <div>
-                    <h2>{title} ({year})</h2>
-                    <ul>
+                <div className={css.details}>
+                    <h3>{title} ({year})</h3>
+                    <ul className={css.detailsList}>
                         <li>
-                            <h3>User score:</h3>
-                            <p>{Math.round(score * 10)} %</p>
+                            <p>User score: {Math.round(score * 10)} %</p>
                         </li>
                         <li>
-                            <h3>Overview</h3>
+                            <h4>Overview</h4>
                             <p>{overview}</p>
                         </li>
                         <li>
-                            <h3>Genres</h3>
+                            <h4>Genres</h4>
                             <p>{genres}</p>
                         </li>
                     </ul>
                 </div>
             </section>
+            <div className={css.informationBox}>
                 {isLoading && <Loader />}
                 <h3>Additional information</h3>
-                    <div>
-                        <Link to="cast">
-                            <button type="button">Cast</button>
-                        </Link>
-                        <Link to="reviews">
-                            <button type="button">Reviews</button>
-                        </Link>
-                    </div>
+                <div className={css.btnBox}>
+                    <Link to="cast">
+                        <button type="button" className={css.btn}>Cast</button>
+                    </Link>
+                    <Link to="reviews">
+                        <button type="button" className={css.btn}>Reviews</button>
+                    </Link>
+                </div>
+            </div>
                 <Outlet />
             <div>
         </div>

@@ -3,7 +3,7 @@ import css from "./Navigate.module.css";
 
 const Navigate = () => {
     return (
-        <div>
+        <div className={css.wrapNav}>
             <nav className={css.navigate}>
                 <Link to="/">Home</Link>
                 <Link to="/movies">Movies</Link>
