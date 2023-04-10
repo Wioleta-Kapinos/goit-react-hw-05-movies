@@ -1,6 +1,5 @@
 h2 {
     text-align: center;
-    padding: 20px 0;
     font-weight: 700;
     font-size: 20px;
 }
@@ -8,19 +7,25 @@ h2 {
 @counter-style name {
     system: cyclic;
     symbols: 🎥;
+    suffix: " ";
 }
 
 .movies {
     list-style-type: name;
     display: flex;
-    flex-direction: column;
+    flex-direction: column;  
 }
 
 .moviesItem {
-    height: 30px;
+    height: 20px;
     padding-bottom: 10px;
 }
 
 .moviesItem:hover {
     transform: scale(1.05);
+}
+
+.error {
+    font-size: 18px;
+    color: rgb(231, 65, 65);
 }

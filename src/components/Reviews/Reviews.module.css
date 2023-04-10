@@ -1,0 +1,13 @@
+ul {
+    padding: 20px;
+    list-style: none;
+}
+
+p {
+    padding-top: 10px;
+}
+
+.error {
+    font-size: 18px;
+    color: rgb(231, 65, 65);
+}

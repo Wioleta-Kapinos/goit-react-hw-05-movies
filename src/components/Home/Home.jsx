@@ -29,7 +29,7 @@ const Home = () => {
         <div>
             <h2>&#11088; Trending movies today &#11088;</h2>
             <ul className={css.movies}>
-                {error && <p className="error">Something went wrong, please try later.</p>}
+                {error && <p className={css.error}>Something went wrong, please try later.</p>}
                 {isLoading && <Loader /> }
                 {titles && titles.map(({ id, title}) => (
                     <li key={id} className={css.moviesItem}>

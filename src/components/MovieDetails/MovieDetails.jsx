@@ -47,7 +47,7 @@ const MovieDetails = () => {
         <div className={css.detailsBox}>
             <button type="button" className={css.btn} onClick={() => {navigate (-1)}}>&#10229; Go back</button>
             <section className={css.detailsSection}>
-            {error && <p className="error">Something went wrong, please try later.</p>}
+            {error && <p className={css.error}>Something went wrong, please try later.</p>}
             {isLoading && <Loader />}
                 <img 
                 className={css.movieImage}

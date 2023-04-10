@@ -2,6 +2,7 @@ import { getCast } from "utils/API";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Loader } from "components/Loader/Loader";
+import css from "./Cast.module.css";
 
 const Cast = () => {
     const [cast, setCast] = useState();
@@ -28,8 +29,8 @@ const Cast = () => {
     return (
         <div>
             {isLoading && <Loader />}
-            <ul>
-            {error && <p className="error">Something went wrong, please try later.</p>}
+            <ul className={css.castBox}>
+            {error && <p className={css.error}>Something went wrong, please try later.</p>}
             {cast && cast.length ? (
           <>
             {cast.map(
@@ -38,9 +39,10 @@ const Cast = () => {
                   <img
                     src={profile_path ? `https://www.themoviedb.org/t/p/w500/${profile_path}` : <p>Image is not available.</p>}
                     alt={original_name}
+                    width={150}
                   />
-                  <h3>{name}</h3>
-                  <p>Character: {character}</p>
+                  <h4>{name}</h4>
+                  <p className={css.description}>Character: {character}</p>
                 </li>
               )
             )}

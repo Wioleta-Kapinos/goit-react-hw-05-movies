@@ -7,18 +7,20 @@
 
 .inputForm {
     border-radius: 5px;
-    border: 2px solid rgb(100, 93, 93);
+    border: none;
     background-color: whitesmoke;
-    box-shadow: 8px 6px 6px -3px gray;
+    box-shadow: 8px 6px 6px -2px rgb(56, 51, 51);
     padding-left: 5px;
 }
 
 .searchButton {
+    width: 80px;
     border-radius: 5px;
-    border: 2px solid rgb(100, 93, 93);
+    border: none;
     margin-left: 10px;
     background-color: rgb(183, 231, 240);
-    box-shadow: 8px 6px 6px -3px gray;
+    box-shadow: 8px 6px 6px -2px rgb(56, 51, 51);
+    font-weight: 600;
 }
 
 .searchButton:hover {
@@ -28,8 +30,14 @@
 @counter-style name {
     system: cyclic;
     symbols: 🎥;
+    suffix: " ";
 }
 
 .moviesList {
     list-style-type: name;
+}
+
+.error {
+    font-size: 18px;
+    color: rgb(231, 65, 65);
 }

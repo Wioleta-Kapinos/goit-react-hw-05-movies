@@ -61,7 +61,7 @@ const Movies = () => {
          </form>
          <div>
             <ul className={css.moviesList}>
-            {error && <p className="error">Something went wrong, please try later.</p>}
+            {error && <p className={css.error}>Something went wrong, please try later.</p>}
                 {isLoading && <Loader />}
                 {movies.map(movie => (
                     <li key={movie.id}>
