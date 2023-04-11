@@ -32,7 +32,6 @@ const Movies = () => {
         };
         setMovies(findedMovie.data.results);
         setIsLoading(false);
-        console.log(movies);
         } catch {
         setError(true);
         setIsLoading(false);
@@ -40,7 +39,7 @@ const Movies = () => {
     }
 
     useEffect(() => {
-         if(!query) return;
+        if(!query) return;
          handleSearch(query);
      }, [query]);
 
