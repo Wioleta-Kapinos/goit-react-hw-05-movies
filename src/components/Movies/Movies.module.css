@@ -33,8 +33,14 @@
     suffix: " ";
 }
 
+.moviesWrap {
+    padding: 0 20px;
+}
+
 .moviesList {
     list-style-type: name;
+    margin: 0;
+    padding: 0 20px;
 }
 
 .error {

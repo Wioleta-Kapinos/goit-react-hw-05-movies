@@ -49,7 +49,7 @@ const Movies = () => {
     }
 
     return (
-        <div>
+        <div className={css.moviesWrap}>
         <form className={css.form} onSubmit={handleSubmit}>
             <input 
             className={css.inputForm}

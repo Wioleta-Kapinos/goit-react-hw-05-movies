@@ -61,7 +61,7 @@ const MovieDetails = () => {
                     <h3>{title} ({year})</h3>
                     <ul className={css.detailsList}>
                         <li>
-                            <p>User score: {Math.round(score * 10)} %</p>
+                            <p>User score: {Math.round(score * 10)}%</p>
                         </li>
                         <li>
                             <h4>Overview</h4>
