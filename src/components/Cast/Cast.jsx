@@ -2,6 +2,7 @@ import { getCast } from "utils/API";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Loader } from "components/Loader/Loader";
+import placeholderImage from "../../image/placeholderImage.png"
 import css from "./Cast.module.css";
 
 const Cast = () => {
@@ -37,7 +38,7 @@ const Cast = () => {
               ({ id, profile_path, original_name, name, character }) => (
                 <li key={id}>
                   <img
-                    src={profile_path ? `https://www.themoviedb.org/t/p/w500/${profile_path}` : <p>Image is not available.</p>}
+                    src={profile_path ? `https://www.themoviedb.org/t/p/w500/${profile_path}` : {placeholderImage}}
                     alt={original_name}
                     width={150}
                   />
